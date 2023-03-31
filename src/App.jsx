@@ -1,17 +1,22 @@
+import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
+  const [watchTime, setWatchTime] = useState("");
+
   const handleWatchTime = (time) => {
     const previousWatchTime = JSON.parse(localStorage.getItem("watchTime"));
 
     if (previousWatchTime) {
       const sum = previousWatchTime + time;
       localStorage.setItem("watchTime", sum);
+      setWatchTime(sum);
     } else {
       localStorage.setItem("watchTime", time);
+      setWatchTime(time);
     }
   };
 
@@ -22,8 +27,8 @@ function App() {
         <div className="home-container md:col-span-3">
           <Home handleWatchTime={handleWatchTime} />
         </div>
-        <div className="sidebar-container md:col-span-1 bg-red-500">
-          <Sidebar />
+        <div className="sidebar-container md:col-span-1">
+          <Sidebar watchTime={watchTime} />
         </div>
       </div>
     </div>
