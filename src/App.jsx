@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="main grid grid-cols-1 md:grid-cols-4 gap-10 md:mx-64 text-center">
-        <div className="home-container md:col-span-3 bg-blue-500">
+        <div className="home-container md:col-span-3">
           <Home />
         </div>
         <div className="sidebar-container md:col-span-1 bg-red-500">
