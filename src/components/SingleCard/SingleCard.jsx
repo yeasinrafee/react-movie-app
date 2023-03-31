@@ -16,7 +16,12 @@ const SingleCard = (props) => {
             <p>IMDB Ratings: {imdbRating}</p>
           </div>
           <div className="card-actions">
-            <button className="btn btn-primary">Book Now</button>
+            <button
+              onClick={() => props.handleWatchTime(watchTime)}
+              className="btn btn-primary"
+            >
+              Book Now
+            </button>
           </div>
         </div>
       </div>
